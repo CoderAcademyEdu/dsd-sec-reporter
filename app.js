@@ -30,7 +30,8 @@ app.get('/*', function (req, res, next) {
 
     // This adds a Content Security Policy Report Only to all responses 
 
-    res.header(`Content-Security-Policy-Report-Only`, `default-src https; block-all-mixed-content; style-src https; script-src https code.jquery.com/jquery-3.3.1.min.js cdnjs.cloudflare.com; connect-src code.jquery.com; require-sri-for script style; report-uri http://localhost:3000/report;`);
+    res.header("Content-Security-Policy-Report-Only", "default-src https; block-all-mixed-content; style-src https; script-src https code.jquery.com/jquery-3.3.1.min.js cdnjs.cloudflare.com; connect-src code.jquery.com; require-sri-for script style; report-uri http://localhost:3000/report;");
+    res.header("X-Content-Security-Policy-Report-Only", "default-src https; block-all-mixed-content; style-src https; script-src https code.jquery.com/jquery-3.3.1.min.js cdnjs.cloudflare.com; connect-src code.jquery.com; require-sri-for script style; report-uri http://localhost:3000/report;");
     
     // Try adding `https://stackpath.bootstrapcdn.com` into the style-src directive
     
@@ -40,3 +41,4 @@ app.get('/*', function (req, res, next) {
 app.use('/', indexRouter);
 
 module.exports = app;
+
